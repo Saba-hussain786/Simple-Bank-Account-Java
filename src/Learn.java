@@ -1,42 +1,42 @@
-import java.util.Scanner;
+import java.util.Scanner; //Import Scanner class to use it in this class
 
-public class Learn {
+public class Learn {  //Class
 
-	public static void main(String[] args) {
+	public static void main(String[] args) {  //Main method(Java program execution starts from here)
 		// TODO Auto-generated method stub
-		BankAccount o1 = new BankAccount("XYZ", "BA0001");
-		o1.screenMenu();
+		BankAccount o1 = new BankAccount("XYZ", "BA0001"); //creating object of BankAccount class by passing value to the constructor
+		o1.screenMenu(); //calling screeMenu() method of BankAccount class with BankAccount object 
 		
 	}
 
 }
 
-class BankAccount{
+class BankAccount{  //BankAccount class
 	
-	int balance;
-	int previousTrans;
-	String customerName;
-	String customerID;
+	int balance;    //Member variable
+	int previousTrans;   //Member variable
+	String customerName;   //Member variable
+	String customerID;   //Member variable
 	
-	BankAccount(String custoName, String cId)
+	BankAccount(String custoName, String cId)   //Constructor of BankAccount class
 	{
-		customerName = custoName;
-		customerID = cId;
-	}
-	void deposit(int amount)
+		customerName = custoName;  //Initializing the member variable customerName
+		customerID = cId;      //Initializing the member variable customerId
+	}  //end of the constructor
+	void deposit(int amount) //deposit() method of BankAccount class
 	{
 		if(amount != 0) 
 		{
 			balance = amount + previousTrans;
 			previousTrans = amount;
 		}
-	}
-	void withdraw(int amount) 
+	}  //end of deposit() method
+	void withdraw(int amount)   //withdraw() method of BankAccount Class
 	{
 		balance = balance - amount;
 		previousTrans = -amount;
-	}
-	void getPreviousTrans() 
+	}  //end of withdraw() method
+	void getPreviousTrans()   //getter method for the private variable PreviousTrans
 	{
 		if(previousTrans > 0) 
 		{
@@ -50,9 +50,9 @@ class BankAccount{
 		{
 			System.out.println("No transaction occurred.");
 		}
-	}
+	}  //end of getter method
 	
-	void screenMenu() 
+	void screenMenu()  //screenMenu() method of BankAccount class
 	{
 		char option = '\0';
 		Scanner scanner = new Scanner(System.in);
@@ -116,6 +116,6 @@ class BankAccount{
 		while(option!= 'E');
 		
 		System.out.println("Thank you so much for trusting us and using our services!");
-	}
+	} //end of screenMenu() method
 }
-
+//End of BankAccount class
